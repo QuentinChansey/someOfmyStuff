@@ -82,7 +82,9 @@
             "protocol":"freedom"
         }
     ],
-    "routing":{
+    "//":"路由规则的判断是依次从上往下，所以把geosite/geoip摆上来优先判断国内的网站",
+    "//":"下面inboundTag里，当某一标识匹配，此规则即可生效",
+    "routing":{							
         "domainStrategy":"IPOnDemand",
         "rules":[
             {
