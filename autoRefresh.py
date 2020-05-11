@@ -39,13 +39,3 @@ while(True):
         Text.click()
     except:
         pass
-    
-
-    
-
-
-
-
-
-
-
