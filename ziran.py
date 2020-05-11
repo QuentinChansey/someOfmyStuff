@@ -7,12 +7,12 @@ from selenium.webdriver.support import expected_conditions as EC
 #from selenium.common.exceptions import NoSuchElementException
 
 driver = webdriver.Firefox(executable_path="C:\Program Files (x86)\geckodriver.exe")
-driver.get("https://www.juzijianzhi.com/studio/room/12")
+driver.get("URL")  #URL
 
 username = driver.find_element_by_id("input-login-account")
-username.send_keys("13662382812")
+username.send_keys("USERNAME")  #USERNAME
 password = driver.find_element_by_id("input-login-password")
-password.send_keys("o;.;,fn+lE&=JH\j~gOH")
+password.send_keys("PASSWORD")  #PASSWORD
 
 login = driver.find_element_by_link_text("登录")
 login.click()
