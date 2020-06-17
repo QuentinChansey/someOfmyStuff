@@ -6,8 +6,14 @@ from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 #from selenium.common.exceptions import NoSuchElementException
 
-driver = webdriver.Firefox(executable_path="C:\Program Files (x86)\geckodriver.exe")
-driver.get("URL")   #URL
+#driver = webdriver.Firefox(executable_path="C:\Program Files (x86)\geckodriver.exe")
+PROXY = "127.0.0.1:10808"
+#PATH = "/usr/lib/chromium-browser/chromedriver"
+chrome_options = webdriver.ChromeOptions()
+chrome_options.add_argument('--proxy-server=socks5://%s' % PROXY)
+driver = webdriver.Chrome(options=chrome_options)
+#driver = webdriver.Chrome(PATH)
+driver.get("URL")   #URL like https://abc.com
 
 username = driver.find_element_by_id("input-login-account")
 username.send_keys("USERNAME")   #USERNAME
