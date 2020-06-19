@@ -73,11 +73,6 @@ def autoRefresh():
             driver.refresh()
         except:
             pass
-        try:
-            Text = driver.find_element_by_xpath("//div[@id='loading-text']/a[1]")
-            Text.click()
-        except:
-            pass
 
 def pool():
     t1 = threading.Thread(target=listen, name='loop1')
