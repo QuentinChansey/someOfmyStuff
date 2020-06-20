@@ -13,15 +13,18 @@ PROXY = "127.0.0.1:10808"
 chrome_options = webdriver.ChromeOptions()
 chrome_options.add_argument('--proxy-server=socks5://%s' % PROXY)
 driver = webdriver.Chrome(options=chrome_options)
-driver.get("") #open your first webpage
+driver.get("https:/www.google.com")
 driver.execute_script("window.open('');")
 driver.switch_to_window(driver.window_handles[1])
-driver.get("") #open and switch to the second webpage
+driver.get("https://www.cilin.org/zidian/shouxie.html")
+driver.execute_script("window.open('');")
+driver.switch_to_window(driver.window_handles[2])
+driver.get("https://www.juzijianzhi.com/studio/room/1")
 
 username = driver.find_element_by_id("input-login-account")
-username.send_keys("") #type your account
+username.send_keys("13662382812")
 password = driver.find_element_by_id("input-login-password")
-password.send_keys("") #type your password
+password.send_keys("o;.;,fn+lE&=JH\j~gOH")
 
 login = driver.find_element_by_link_text("登录")
 login.click()
@@ -83,3 +86,4 @@ def pool():
     t2.join()
 
 pool()
+
